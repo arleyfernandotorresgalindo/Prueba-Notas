@@ -1,9 +1,14 @@
 import streamlit as st
 import pandas as pd
+import requests
+from io import BytesIO
 
 # OneDrive public link (replace with your actual link)
-#EXCEL_URL = "https://docs.google.com/spreadsheets/d/1k8L93YmkGym-mrzgAktIdDdbLijqIvOl/edit?usp=sharing&ouid=102440146143827663801&rtpof=true&sd=true"
+#EXCEL_URL = "https://uexternadoedu-my.sharepoint.com/personal/arley_torres_uexternado_edu_co/EWLkjJhxRxBBrJaydePdva4Bnz4Z8JyRwg65IqooLIWu3A?download=1"
 EXCEL_URL = 'Notas.xlsx'
+
+#response = requests.get(EXCEL_URL)
+#file_bytes = BytesIO(response.content)
 
 @st.cache_data
 def load_data(url):
@@ -20,6 +25,7 @@ df = load_data(EXCEL_URL)
 st.title("Consulta de Calificaciones")
 
 # User inputs
+materia = st.selectbox('Elegir su materia', ['Precálculo', 'Programación 2', 'Estructura de datos'])
 email = st.text_input("Ingrese su correo electrónico:")
 student_id = st.text_input("Ingrese su número de documento:")
 
