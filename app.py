@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # OneDrive public link (replace with your actual link)
-EXCEL_URL = "https://your-onedrive-link"
+EXCEL_URL = "https://uexternadoedu-my.sharepoint.com/:x:/g/personal/arley_torres_uexternado_edu_co/EWLkjJhxRxBBrJaydePdva4Bnz4Z8JyRwg65IqooLIWu3A&download=1"
 
 @st.cache_data
 def load_data(url):
@@ -26,7 +26,7 @@ if st.button("Consultar"):
     if not email or not student_id:
         st.warning("Por favor, ingrese ambos valores.")
     else:
-        student_data = df[(df["Email"] == email) & (df["ID"] == int(student_id))]
+        student_data = df[(df["Correo"] == email) & (df["Nro.Documento"] == int(student_id))]
 
         if not student_data.empty:
             st.success("Calificaciones encontradas:")
