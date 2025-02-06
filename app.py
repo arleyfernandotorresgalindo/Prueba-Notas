@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # OneDrive public link (replace with your actual link)
-EXCEL_URL = "https://uexternadoedu-my.sharepoint.com/:x:/g/personal/arley_torres_uexternado_edu_co/EWLkjJhxRxBBrJaydePdva4Bnz4Z8JyRwg65IqooLIWu3A?ver=2023-07-20"
+EXCEL_URL = "https://uexternadoedu-my.sharepoint.com/:x:/g/personal/arley_torres_uexternado_edu_co/EWLkjJhxRxBBrJaydePdva4Bnz4Z8JyRwg65IqooLIWu3A?e=xe0H7o"
 
 @st.cache_data
 def load_data(url):
