@@ -3,7 +3,7 @@ import pandas as pd
 
 # OneDrive public link (replace with your actual link)
 #EXCEL_URL = "https://docs.google.com/spreadsheets/d/1k8L93YmkGym-mrzgAktIdDdbLijqIvOl/edit?usp=sharing&ouid=102440146143827663801&rtpof=true&sd=true"
-EXCEL_URL = 'N otas.xlsl'
+EXCEL_URL = 'Notas.xlsx'
 
 @st.cache_data
 def load_data(url):
