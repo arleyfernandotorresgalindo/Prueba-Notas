@@ -5,7 +5,7 @@ from io import BytesIO
 
 # OneDrive public link (replace with your actual link)
 #EXCEL_URL = "https://uexternadoedu-my.sharepoint.com/personal/arley_torres_uexternado_edu_co/EWLkjJhxRxBBrJaydePdva4Bnz4Z8JyRwg65IqooLIWu3A?download=1"
-EXCEL_URL = 'Notas.xlsx'
+EXCEL_URL = 'Notas_2025_01.xlsx'
 
 #response = requests.get(EXCEL_URL)
 #file_bytes = BytesIO(response.content)
@@ -13,14 +13,14 @@ EXCEL_URL = 'Notas.xlsx'
 @st.cache_data
 def load_data(url):
     try:
-        df = pd.read_excel(url, engine="openpyxl")
-        return df
+        df1 = pd.read_excel(url, sheet_name=None, engine="openpyxl")
+        return df1
     except Exception as e:
         st.error(f"Error loading data: {e}")
         return None
 
 # Load data
-df = load_data(EXCEL_URL)
+df1 = load_data(EXCEL_URL)
 
 st.title("Consulta de Calificaciones")
 
@@ -28,6 +28,7 @@ st.title("Consulta de Calificaciones")
 materia = st.selectbox('Elegir su materia', ['Precálculo', 'Programación 2', 'Estructura de datos'])
 email = st.text_input("Ingrese su correo electrónico:")
 student_id = st.text_input("Ingrese su número de documento:")
+df = df1[materia]
 
 if st.button("Consultar"):
     if not email or not student_id:
