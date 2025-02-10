@@ -34,7 +34,7 @@ if st.button("Consultar"):
     if not email or not student_id:
         st.warning("Por favor, ingrese ambos valores.")
     else:
-        student_data = df[(df["Correo"] == email) & (df["Nro.Documento"] == int(student_id))]
+        student_data = df[(df["Correo"].str.contains (email, case = False) & (df["Nro.Documento"] == int(student_id))]
 
         if not student_data.empty:
             st.success("Calificaciones encontradas:")
