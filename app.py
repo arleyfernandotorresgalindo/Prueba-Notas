@@ -22,7 +22,7 @@ def load_data(url):
 # Load data
 df1 = load_data(EXCEL_URL)
 
-st.title("Consulta de Calificaciones 2025-01")
+st.title("Consulta De Calificaciones 2025-01")
 
 # User inputs
 materia = st.selectbox('Elegir su materia', ['Precálculo', 'Programación 2', 'Estructura de datos'])
