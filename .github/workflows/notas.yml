@@ -1,0 +1,6 @@
+- name: Set environment variables
+  run: |
+    echo "GOOGLE_SHEETS_CREDENTIALS=${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}" >> $GITHUB_ENV
+- name: run my script
+  run: |
+    streamlit run app.py
