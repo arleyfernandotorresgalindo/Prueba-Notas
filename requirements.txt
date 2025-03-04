@@ -3,3 +3,5 @@ pandas
 openpyxl
 requests
 azure-storage-blob
+googleapiclient.discovery
+google.oauth2
