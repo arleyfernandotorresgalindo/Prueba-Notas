@@ -5,7 +5,7 @@ from io import BytesIO
 
 # OneDrive public link (replace with your actual link)
 #EXCEL_URL = "https://uexternadoedu-my.sharepoint.com/personal/arley_torres_uexternado_edu_co/EWLkjJhxRxBBrJaydePdva4Bnz4Z8JyRwg65IqooLIWu3A?download=1"
-EXCEL_URL = 'output1.xlsx'
+EXCEL_URL = 'Notasseismayo.xlsx'
 
 #response = requests.get(EXCEL_URL)
 #file_bytes = BytesIO(response.content)
@@ -25,7 +25,7 @@ df1 = load_data(EXCEL_URL)
 st.title("Consulta De Calificaciones 2025-01")
 
 # User inputs
-materia = st.selectbox('Elegir su materia', ['Precálculo', 'Programación 2', 'Estructura de datos'])
+materia = st.selectbox('Elegir su materia', ['Precálculo', 'Estructura de datos', 'Notas_defi_Programación_2'])
 email = st.text_input("Ingrese su correo electrónico:")
 student_id = st.text_input("Ingrese su número de documento:")
 df = df1[materia]
@@ -34,7 +34,8 @@ if st.button("Consultar"):
     if not email or not student_id:
         st.warning("Por favor, ingrese ambos valores.")
     else:
-        student_data = df[(df["Correo"].str.contains(email, case = False)) & (df["Nro.Documento"] == int(student_id))]
+        #student_data = df[(df["Correo"].str.contains(email, case = False)) & (df["Nro.Documento"] == int(student_id))]
+        student_data = df[(df["Nro.Documento"] == int(student_id))]
 
         if not student_data.empty:
             st.success("Calificaciones encontradas:")
