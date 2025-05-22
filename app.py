@@ -5,7 +5,7 @@ from io import BytesIO
 
 # OneDrive public link (replace with your actual link)
 #EXCEL_URL = "https://uexternadoedu-my.sharepoint.com/personal/arley_torres_uexternado_edu_co/EWLkjJhxRxBBrJaydePdva4Bnz4Z8JyRwg65IqooLIWu3A?download=1"
-EXCEL_URL = 'notas15mayo.xlsx'
+EXCEL_URL = 'notas21mayo.xlsx'
 
 #response = requests.get(EXCEL_URL)
 #file_bytes = BytesIO(response.content)
@@ -25,7 +25,7 @@ df1 = load_data(EXCEL_URL)
 st.title("Consulta De Calificaciones 2025-01")
 
 # User inputs
-materia = st.selectbox('Elegir su materia', ['Precálculo', 'Estructura de datos', 'Notas_defi_Programación_2'])
+materia = st.selectbox('Elegir su materia', ['Precálculo', 'Estructura de datos', 'Notas_defi_Programación_2', 'Apreciaciones_P3'])
 email = st.text_input("Ingrese su correo electrónico:")
 student_id = st.text_input("Ingrese su número de documento:")
 df = df1[materia]
