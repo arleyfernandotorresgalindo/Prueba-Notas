@@ -25,7 +25,7 @@ df1 = load_data(EXCEL_URL)
 st.title("Consulta De Calificaciones 2025-01")
 
 # User inputs
-materia = st.selectbox('Elegir su materia', ['Precálculo', 'Estructura de datos', 'Notas_defi_Programación_2', 'Apreciaciones_P3'])
+materia = st.selectbox('Elegir su materia', ['Precálculo', 'Estructura de datos', 'Programación_2'])
 email = st.text_input("Ingrese su correo electrónico:")
 student_id = st.text_input("Ingrese su número de documento:")
 df = df1[materia]
