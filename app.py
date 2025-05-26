@@ -5,7 +5,7 @@ from io import BytesIO
 
 # OneDrive public link (replace with your actual link)
 #EXCEL_URL = "https://uexternadoedu-my.sharepoint.com/personal/arley_torres_uexternado_edu_co/EWLkjJhxRxBBrJaydePdva4Bnz4Z8JyRwg65IqooLIWu3A?download=1"
-EXCEL_URL = 'notas23mayo.xlsx'
+EXCEL_URL = 'NotasDef.xlsx'
 
 #response = requests.get(EXCEL_URL)
 #file_bytes = BytesIO(response.content)
